@@ -22,10 +22,14 @@ You can download the preprocessed dataset from:
 ---
 ## Trained Model Weights
 
-You can download the best-performing model checkpoint here:
+You can download the best-performing model checkpoint here: 
 **[best_model.pth (Google Drive)] https://drive.google.com/file/d/1lcSzt5U_toRsZdSBQjkYZjARnyIO6LE7/view?usp=drive_link**
 > After downloading, place the file in the root folder or set its path in the notebook.
 
+An interactive version of the final segmentation notebook is also available: [MRNetSegmentation.html](./MRNetSegmentation.html)
+It contains visualizations of training progress, model predictions, and performance evaluation.
+
+To view the HTML file directly in GitHub, you may need to download it or use a viewer like nbviewer or VSCode preview.
 ---
 ## Visualizations
 
