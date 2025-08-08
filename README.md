@@ -10,7 +10,6 @@ It is part of the assignment for the UCD course: *AI for Medical Image Analysis*
 | `MRNetSegmentation.ipynb` | Main notebook for training and evaluation |
 | `MRNetSegmentation.html` | Exported HTML version of the notebook |
 | `plots/` | Contains visualization outputs (e.g., training curves, predictions) |
-| `best_model.pth` | Best model (at epoch 25) |
 
 ---
 ## Task Overview
