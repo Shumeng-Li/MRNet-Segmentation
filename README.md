@@ -1,15 +1,20 @@
 # MRNet-Segmentation
 
-This project performs right ventricular (RV) segmentation in cardiac MRI using deep learning.  
+This project performs multi-class cardiac MRI segmentation (Left Ventricle, Myocardium, Right Ventricle) using deep learning.  
 It is part of the assignment for the UCD course: *AI for Medical Image Analysis*.
 
 ## Project Structure
 
 | File / Folder | Description |
 |---------------|-------------|
-| `MRNetSegmentation.ipynb` | Main notebook for training and evaluation |
-| `MRNetSegmentation.html` | Exported HTML version of the notebook |
-| `plots/` | Contains visualization outputs (e.g., training curves, predictions) |
+| `MRNetSegmentation_UNet.ipynb` | Main notebook for U-Net training, explainability (Grad-CAM), and evaluation |
+| `MRNetSegmentation_UNet.pdf` | Exported PDF version of the notebook |
+| `epoch_prediction/` | Sample predictions at different training epochs |
+| `gradcam_epoch/` | Grad-CAM visualizations for each epoch and class |
+| `test_prediction/` | Final predictions on unseen test images |
+| `loss_dice_curves.png` | Training loss, Dice score, and IoU curves for U-Net |
+| `training_curves.png` | Combined training metrics plot for U-Net |
+| `README.md` | Project documentation |
 
 ---
 ## Task Overview
@@ -17,7 +22,7 @@ Due to size limitations, the dataset is stored externally.
 
 You can download the preprocessed dataset from:
 
-**[Google Drive Dataset Link (MnM2)] https://drive.google.com/file/d/1fSSdYF7Vi8G_5Zk6yblHKu8Dfsg2EGIM/view?usp=drive_link**
+**[Google Drive Dataset Link (MnM2)] https://drive.google.com/file/d/1fSSdYF7Vi8G_5Zk6yblHKu8Dfsg2EGIM/view?usp=sharing**
 > Place the extracted folder as `./data/` under your working directory.
 
 ---
@@ -25,33 +30,33 @@ You can download the preprocessed dataset from:
 
 You can download the best-performing model checkpoint here: 
 
-**[best_model.pth (Google Drive)] https://drive.google.com/file/d/1lcSzt5U_toRsZdSBQjkYZjARnyIO6LE7/view?usp=drive_link**
+**[best_model.pth (Google Drive)] https://drive.google.com/file/d/15sgA1RibdAWwBy97q5d-QXSdMhyyyFsn/view?usp=sharing**
 > After downloading, place the file in the root folder or set its path in the notebook.
 
 ---
 ## Interactive Version of Notebook
 
-An interactive version of the final segmentation notebook is also available: [MRNetSegmentation.html](./MRNetSegmentation.html)
+An interactive version of the final segmentation notebook is also available: [MRNetSegmentation_UNet.pdf](./MRNetSegmentation_UNet.pdf)
 
 It contains visualizations of training progress, model predictions, and performance evaluation.
 
 ---
+
 ## Visualizations
 
-All training and prediction visualizations are saved in the `plots/` folder.
+All outputs are saved in the corresponding folders or as standalone image files.
 
 ### Training Metrics
-- `loss_dice_curves.png`: Training loss and Dice score across epochs
+- `loss_dice_curves.png` — Loss, Dice score, and IoU trends over epochs
+- `training_curves.png` — Combined training metrics for U-Net
 
 ### Prediction Examples
-- `epoch_1_prediction.png` to `epoch_30_prediction.png`: Sample predictions at different epochs
-- `test_prediction_1.png` to `test_prediction_10.png`: Final predictions on test images
+- `epoch_prediction/` — Predictions at various training epochs
+- `test_prediction/` — Final predictions on unseen test images
 
 ### Explainability (Grad-CAM)
-- `gradcam_epoch1.png` to `gradcam_epoch30.png`: Grad-CAM visualizations for each epoch
-- These attention maps highlight which regions the model focused on for segmentation.
-
-> These visualizations help monitor learning progress and evaluate both prediction quality and model explainability.
+- `gradcam_epoch/` — Grad-CAM visualizations for each epoch and target class  
+  These highlight which regions the model focused on for each cardiac structure.
 
 ---
 ## How to Run
